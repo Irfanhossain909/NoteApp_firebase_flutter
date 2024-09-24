@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:note_app_flutter_firebase/pages/home_page.dart';
+import 'package:note_app_flutter_firebase/pages/registration_page.dart';
 import 'package:note_app_flutter_firebase/provider/auth_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -88,12 +89,28 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 20.0),
-              ElevatedButton(
-                onPressed: _login,
-                child: const Text(
-                  'Login',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                ),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: _login,
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  ElevatedButton(
+                    onPressed: ()=> Navigator.pushNamed(context, RegistrationPage.routeName),
+                    child: const Text(
+                      'SignUp',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 20.0,
