@@ -43,6 +43,7 @@ dependencies:
   cloud_firestore:
   firebase_storage:
   flutter_easyloading:
+  flutter_native_splash:
 
 dev_dependencies:
   flutter_test:

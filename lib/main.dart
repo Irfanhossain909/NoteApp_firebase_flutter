@@ -7,6 +7,7 @@ import 'package:note_app_flutter_firebase/pages/home_page.dart';
 import 'package:note_app_flutter_firebase/pages/launcher_page.dart';
 import 'package:note_app_flutter_firebase/pages/login_page.dart';
 import 'package:note_app_flutter_firebase/pages/registration_page.dart';
+import 'package:note_app_flutter_firebase/pages/splashScreen.dart';
 import 'package:note_app_flutter_firebase/provider/auth_provider.dart';
 import 'package:note_app_flutter_firebase/provider/note_provider.dart';
 import 'package:provider/provider.dart';
@@ -37,14 +38,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      builder: EasyLoading.init(),
-      initialRoute: LauncherPage.routeName,
+      // builder: EasyLoading.init(),
+      initialRoute: Splashscreen.routeName,
       routes: {
         LauncherPage.routeName : (context) => const LauncherPage(),
         HomePage.routeName : (context) => const HomePage(),
         LoginPage.routeName : (context) => const LoginPage(),
         RegistrationPage.routeName : (context) => const RegistrationPage(),
         AddNotePage.routeName : (context) => const AddNotePage(),
+        Splashscreen.routeName : (context) => const Splashscreen(),
       },
     );
   }
