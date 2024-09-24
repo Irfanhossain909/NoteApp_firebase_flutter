@@ -37,13 +37,19 @@ class _SplashscreenState extends State<Splashscreen> {
           ),
         ),
         child: const Center(
-          child: Text(
-            'Add Note',
-            style: TextStyle(
-              fontSize: 34,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.edit_note_sharp,size: 100,),
+              Text(
+                'MindMaple',
+                style: TextStyle(
+                  fontSize: 34,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+            ],
           ),
         ),
       ),
