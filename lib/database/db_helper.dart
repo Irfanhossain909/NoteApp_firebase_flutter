@@ -20,10 +20,9 @@ class DbHelper {
     final doc = _db.collection(_collectionUserNote).doc();
     model.id = doc.id;
     return doc.set(model.toMap());
-
-
-
-
   }
+
+  static Stream<QuerySnapshot<Map<String, dynamic>>> getAllNoteList() =>
+      _db.collection(_collectionUserNote).snapshots();
 
 }

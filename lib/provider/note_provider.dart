@@ -8,5 +8,12 @@ class NoteProvider with ChangeNotifier {
   Future<void> addNote(NoteModel model) {
     return DbHelper.addNote(model);
   }
+  getAllNote() {
+    DbHelper.getAllNoteList().listen((snapshot){
+      noteList = List.generate(snapshot.docs.length, (index) =>
+      NoteModel.fromMap(snapshot.docs[index].data()));
+      notifyListeners();
+    });
+  }
 
 }
