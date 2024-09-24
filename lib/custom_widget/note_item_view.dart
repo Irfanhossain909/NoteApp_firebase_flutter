@@ -9,9 +9,9 @@ class NoteItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: const CircleAvatar(child: Icon(Icons.note)),
-        title: Text(note.title),
-        subtitle: Text(note.description),
+        leading: const CircleAvatar(child: Icon(Icons.note_alt_rounded)),
+        title: Text(note.title,style: const TextStyle(fontSize: 22,fontWeight: FontWeight.w700,color: Colors.blue),),
+        subtitle: Text(note.description,style: const TextStyle(fontSize: 16,color: Colors.orange),),
       )
     );
   }
