@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:note_app_flutter_firebase/main.dart';
+import 'package:note_app_flutter_firebase/pages/add_note_page.dart';
 import 'package:note_app_flutter_firebase/pages/login_page.dart';
 import 'package:note_app_flutter_firebase/provider/auth_provider.dart';
 import 'package:provider/provider.dart';
@@ -18,10 +19,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: IconButton(
+        style: ButtonStyle(
+            backgroundColor: WidgetStateProperty.all(Colors.orange.shade400)
+        ),
+        onPressed: ()=> Navigator.pushNamed(context, AddNotePage.routeName),
+        icon: const Icon(Icons.add,size: 30,),
+      ),
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: ()=> context.read<FirebaseAuthProvider>().logout().then((_){
+            onPressed: () =>
+                context.read<FirebaseAuthProvider>().logout().then((_) {
               Navigator.pushReplacementNamed(context, LoginPage.routeName);
             }),
             icon: const Icon(Icons.logout),
